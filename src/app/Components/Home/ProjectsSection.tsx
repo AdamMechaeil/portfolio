@@ -30,10 +30,10 @@ export const ProjectsSection = () => {
           <h2
             className={`${oswald.className} text-4xl md:text-6xl font-bold uppercase tracking-wider text-black dark:text-white text-shadow-[0px_0px_20px_rgba(0,0,0,0.35)] dark:text-shadow-[0px_0px_20px_rgba(255,255,255,0.6)]`}
           >
-            Projects
+            Side Quests
           </h2>
           <p className="text-emerald-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
-            // Current Operations & Builds
+            // Solo Ventures
           </p>
         </div>
 
