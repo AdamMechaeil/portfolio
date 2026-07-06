@@ -1,0 +1,59 @@
+import React from "react";
+import { Oswald } from "next/font/google";
+const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+const getDevicon = (name: string, version: string = "original") =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
+
+// The Arsenal Array
+const arsenalItems = [
+  { name: "React.js", imgSrc: getDevicon("react") },
+  { name: "Node.js", imgSrc: getDevicon("nodejs", "original-wordmark") },
+  { name: "TypeScript", imgSrc: getDevicon("typescript") },
+  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original-wordmark") },
+  { name: "Next.js", imgSrc: getDevicon("nextjs", "original") },
+  { name: "Tailwind CSS", imgSrc: getDevicon("tailwindcss") },
+  { name: "MongoDB", imgSrc: getDevicon("mongodb", "original-wordmark") },
+  { name: "Docker", imgSrc: getDevicon("docker") },
+  { name: "Python", imgSrc: getDevicon("python") },
+  { name: "Django", imgSrc: getDevicon("django", "plain") },
+  { name: "JavaScript", imgSrc: getDevicon("javascript") },
+  { name: "MySQL", imgSrc: getDevicon("mysql", "original-wordmark") },
+  { name: "Socket.io", imgSrc: getDevicon("socketio") },
+  { name: "Redux", imgSrc: getDevicon("redux") },
+  { name: "Git", imgSrc: getDevicon("git") },
+  { name: "HTML5", imgSrc: getDevicon("html5") },
+  { name: "CSS3", imgSrc: getDevicon("css3") },
+];
+
+export const SkillsSection = () => {
+  return (
+    <section className="relative w-full bg-blue-200/50 dark:bg-black py-20 md:py-32 overflow-hidden px-4 md:px-0 transition-colors duration-500">
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[80%] hidden dark:block bg-blue-600/15 blur-[140px] pointer-events-none z-0 rounded-full" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16 md:mb-24">
+          <h2
+            className={`${oswald.className} text-4xl md:text-6xl font-bold uppercase tracking-wider text-black dark:text-white text-shadow-[0px_0px_20px_rgba(0,0,0,0.35)] dark:text-shadow-[0px_0px_20px_rgba(255,255,255,0.6)]`}
+          >
+            My Arsenal
+          </h2>
+          <p className="text-emerald-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
+            // Technologies & Tools
+          </p>
+        </div>
+
+        {/* Marquee Section */}
+        <div className="w-full relative z-50 flex flex-col items-center justify-center">
+          <InfiniteMovingCards
+            items={arsenalItems}
+            direction="left"
+            speed="slow"
+            pauseOnHover={true}
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
