@@ -1,24 +1,9 @@
 "use client";
-
-import React from "react";
 import { motion } from "framer-motion";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { Oswald } from "next/font/google";
-
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
+import { oswald, wordsHero } from "@/lib/constants";
 
 export const HeroSection = () => {
-  const words = [
-    {
-      text: "Adam",
-      className: `${oswald.className} text-5xl md:text-8xl font-bold tracking-tighter uppercase text-white drop-shadow-[0_4px_20px_rgba(0,0,0,1)]`,
-    },
-    {
-      text: "Mechaeil",
-      className: `${oswald.className} text-5xl md:text-8xl font-bold tracking-tighter uppercase text-blue-500 drop-shadow-[0_4px_20px_rgba(0,0,0,1)]`,
-    },
-  ];
-
   return (
     <section className="relative w-full h-[100vh] overflow-hidden bg-black flex flex-col md:flex-row shadow-xl">
       <div className="relative w-full h-1/2 md:w-1/2 md:h-full overflow-hidden">
@@ -56,7 +41,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none mt-16">
         <div className="w-[95%] md:w-[70%] lg:w-[60%] p-4 md:p-8 pointer-events-auto text-center flex flex-col items-center">
           <TypewriterEffect
-            words={words}
+            words={wordsHero}
             cursorClassName="bg-blue-500"
             startDelay={8500}
           />

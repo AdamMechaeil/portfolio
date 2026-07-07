@@ -7,8 +7,6 @@ export const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // This controls how long the preloader stays on screen.
-    // Adjust the 4000 (4 seconds) to exactly match the length of your video!
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 8000);
@@ -26,7 +24,6 @@ export const Preloader = () => {
           transition={{ duration: 1, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-white dark:bg-black"
         >
-          {/* Replace src with the exact filename of your cursive name video */}
           <video
             autoPlay
             muted

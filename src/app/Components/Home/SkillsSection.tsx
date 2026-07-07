@@ -1,30 +1,5 @@
-import React from "react";
-import { Oswald } from "next/font/google";
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-const getDevicon = (name: string, version: string = "original") =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
-
-// The Arsenal Array
-const arsenalItems = [
-  { name: "React.js", imgSrc: getDevicon("react") },
-  { name: "Node.js", imgSrc: getDevicon("nodejs", "original-wordmark") },
-  { name: "TypeScript", imgSrc: getDevicon("typescript") },
-  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original-wordmark") },
-  { name: "Next.js", imgSrc: getDevicon("nextjs", "original") },
-  { name: "Tailwind CSS", imgSrc: getDevicon("tailwindcss") },
-  { name: "MongoDB", imgSrc: getDevicon("mongodb", "original-wordmark") },
-  { name: "Docker", imgSrc: getDevicon("docker") },
-  { name: "Python", imgSrc: getDevicon("python") },
-  { name: "Django", imgSrc: getDevicon("django", "plain") },
-  { name: "JavaScript", imgSrc: getDevicon("javascript") },
-  { name: "MySQL", imgSrc: getDevicon("mysql", "original-wordmark") },
-  { name: "Socket.io", imgSrc: getDevicon("socketio") },
-  { name: "Redux", imgSrc: getDevicon("redux") },
-  { name: "Git", imgSrc: getDevicon("git") },
-  { name: "HTML5", imgSrc: getDevicon("html5") },
-  { name: "CSS3", imgSrc: getDevicon("css3") },
-];
+import { arsenalItems, oswald } from "@/lib/constants";
 
 export const SkillsSection = () => {
   return (

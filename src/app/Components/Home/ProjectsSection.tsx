@@ -1,26 +1,12 @@
 "use client";
 
-import React from "react";
-import { Oswald } from "next/font/google";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
-
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
+import { oswald, projectsData } from "@/lib/constants";
 
 export const ProjectsSection = () => {
   // Placeholder Project Data
-  const project = {
-    title: "[Project Name Placeholder]",
-    description:
-      "[Project description placeholder. Replace this with a 1-2 sentence description of what the project does.]",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-    techStack: ["React", "Next.js", "Tailwind CSS"],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com",
-  };
-
   return (
     <section className="relative w-full bg-blue-200/50 dark:bg-black py-20 md:py-32 overflow-hidden px-4 md:px-0 transition-colors duration-500">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[80%] hidden dark:block bg-blue-600/15 blur-[140px] pointer-events-none z-0 rounded-full" />
@@ -41,17 +27,17 @@ export const ProjectsSection = () => {
           <div className="flex flex-col items-center">
             <div className="hidden md:block">
               <DirectionAwareHover
-                imageUrl={project.image}
+                imageUrl={projectsData.image}
                 className="w-[800px] h-[500px] border border-black/50 dark:border-white/30"
                 imageClassName="opacity-80"
               >
                 <div className="flex flex-col gap-4 max-w-xl">
-                  <h3 className="font-bold text-3xl">{project.title}</h3>
+                  <h3 className="font-bold text-3xl">{projectsData.title}</h3>
                   <p className="text-neutral-200 text-sm">
-                    {project.description}
+                    {projectsData.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    {project.techStack.map((tech, idx) => (
+                    {projectsData.techStack.map((tech, idx) => (
                       <span
                         key={idx}
                         className="bg-black/50 border border-white/20 px-3 py-1 text-xs rounded-full"
@@ -62,7 +48,7 @@ export const ProjectsSection = () => {
                   </div>
                   <div className="flex gap-4 mt-4">
                     <a
-                      href={project.liveLink}
+                      href={projectsData.liveLink}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
@@ -70,7 +56,7 @@ export const ProjectsSection = () => {
                       <IconExternalLink size={18} /> Live Demo
                     </a>
                     <a
-                      href={project.githubLink}
+                      href={projectsData.githubLink}
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
@@ -84,21 +70,21 @@ export const ProjectsSection = () => {
             <div className="block md:hidden mt-10">
               <PinContainer
                 title="View Project"
-                href={project.liveLink}
+                href={projectsData.liveLink}
                 containerClassName="w-full"
               >
                 <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[22rem] ">
                   <h3 className="max-w-xs !pb-2 !m-0 font-bold text-xl text-slate-100">
-                    {project.title}
+                    {projectsData.title}
                   </h3>
                   <div className="text-base !m-0 !p-0 font-normal">
                     <span className="text-slate-500 ">
-                      {project.description}
+                      {projectsData.description}
                     </span>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {project.techStack.map((tech, idx) => (
+                    {projectsData.techStack.map((tech, idx) => (
                       <span
                         key={idx}
                         className="bg-white/10 px-2 py-1 text-[10px] rounded-sm text-white"
@@ -110,8 +96,8 @@ export const ProjectsSection = () => {
 
                   <div className="flex flex-1 w-full rounded-lg mt-4 overflow-hidden relative">
                     <img
-                      src={project.image}
-                      alt={project.title}
+                      src={projectsData.image}
+                      alt={projectsData.title}
                       className="object-cover w-full h-full opacity-80"
                     />
                   </div>

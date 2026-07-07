@@ -1,38 +1,6 @@
-import React from "react";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { Oswald } from "next/font/google";
-
-const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
-
-const experienceData = [
-  {
-    role: "Chief Technology Officer",
-    company: "Tech Startups Inc.",
-    location: "Remote / Cyber-Space",
-    date: "2023 - PRESENT",
-    description:
-      "Led the engineering faction. Scaled the backend architecture, implemented ultra-fast Next.js frontends, and managed a team of elite developers to deliver high-octane SaaS products.",
-    skills: ["Next.js", "React", "Node.js", "AWS", "System Architecture"],
-  },
-  {
-    role: "Senior Software Engineer",
-    company: "Global Innovations",
-    location: "New York, NY",
-    date: "2020 - 2023",
-    description:
-      "Developed cutting-edge user interfaces and complex data visualization tools. Reduced load times by 40% and optimized the core rendering engine.",
-    skills: ["React", "TypeScript", "Tailwind CSS", "GraphQL"],
-  },
-  {
-    role: "Full Stack Developer",
-    company: "Creative Agency X",
-    location: "London, UK",
-    date: "2018 - 2020",
-    description:
-      "Built bespoke e-commerce platforms and highly animated marketing sites for premium brands. Handled both frontend polish and backend database design.",
-    skills: ["Vue.js", "Express", "MongoDB", "Framer Motion"],
-  },
-];
+import { oswald } from "@/lib/constants";
+import { experienceData } from "@/lib/constants";
 
 export const ExperienceSection = () => {
   return (
