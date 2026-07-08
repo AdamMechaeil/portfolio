@@ -43,7 +43,7 @@ export const HeroSection = () => {
           <TypewriterEffect
             words={wordsHero}
             cursorClassName="bg-blue-500"
-            startDelay={8500}
+            startDelay={8100}
           />
 
           <h2

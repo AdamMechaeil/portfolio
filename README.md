@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adam Mechaeil | Full Stack Developer
 
-## Getting Started
+Welcome to my personal portfolio repository. This project is a highly-interactive, full-stack web application built to showcase my skills, projects, and professional experience.
 
-First, run the development server:
+![Portfolio Preview](/public/logo.png) <!-- Update this path if you add a banner image later -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This portfolio is built using bleeding-edge web technologies to ensure maximum performance, seamless animations, and a premium user experience:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 16.2.9](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Aceternity UI,shadcn/ui](https://ui.aceternity.com/,https://ui.shadcn.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Database (Contact Form)**: PostgreSQL + [Prisma ORM](https://www.prisma.io/)
+- **Deployment**: [Vercel](https://vercel.com)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Key Features
 
-## Learn More
+- **Glassmorphism & Dark Mode**: A sleek, modern aesthetic utilizing heavy background blurs, glowing accents, and dynamic gradients.
+- **Advanced Micro-Interactions**: Complex animations powered by Framer Motion, including magnetic buttons, tracing beams, and mouse-tracking spotlights.
+- **Serverless Contact Flow**: A fully functional, stateful contact modal that securely saves messages directly to a PostgreSQL database via Server Actions.
+- **Performance Optimized**: Lighthouse scores optimized with strict TypeScript typing, responsive images, and server-side rendering.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Local Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally on your machine:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/AdamMechaeil/portfolio.git
+   cd portfolio
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory and add your PostgreSQL database URL:
+
+   ```env
+   DATABASE_URL="postgres://user:password@host:5432/dbname"
+   ```
+
+4. **Sync the database**
+
+   ```bash
+   npx prisma db push
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📬 Contact
+
+If you'd like to reach out for a project, collaboration, or just to say hi, feel free to use the Contact Modal on the live site, or hit me up on [LinkedIn](https://www.linkedin.com/in/adam-mechaeil-763294194/).
+
+---
+
+_Designed & Developed by Adam Mechaeil_
