@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
-import { PinContainer } from "@/components/ui/3d-pin";
-import { IconBrandGithub, IconExternalLink } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconExternalLink,
+  IconHandClick,
+} from "@tabler/icons-react";
 import { oswald, projectsData } from "@/lib/constants";
 
 export const ProjectsSection = () => {
@@ -67,42 +72,8 @@ export const ProjectsSection = () => {
                 </div>
               </DirectionAwareHover>
             </div>
-            <div className="block md:hidden mt-10">
-              <PinContainer
-                title="View Project"
-                href={projectsData.liveLink}
-                containerClassName="w-full"
-              >
-                <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[22rem] ">
-                  <h3 className="max-w-xs !pb-2 !m-0 font-bold text-xl text-slate-100">
-                    {projectsData.title}
-                  </h3>
-                  <div className="text-base !m-0 !p-0 font-normal">
-                    <span className="text-slate-500 ">
-                      {projectsData.description}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {projectsData.techStack.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="bg-white/10 px-2 py-1 text-[10px] rounded-sm text-white"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-1 w-full rounded-lg mt-4 overflow-hidden relative">
-                    <img
-                      src={projectsData.image}
-                      alt={projectsData.title}
-                      className="object-cover w-full h-full opacity-80"
-                    />
-                  </div>
-                </div>
-              </PinContainer>
+            <div className="block md:hidden mt-10 w-[95vw] max-w-[320px]">
+              <MobileFlipCard project={projectsData} />
             </div>
           </div>
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -120,5 +91,93 @@ export const ProjectsSection = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const MobileFlipCard = ({ project }: { project: typeof projectsData }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div
+      className="relative w-full h-[400px] cursor-pointer"
+      style={{ perspective: "1000px" }}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <motion.div
+        className="w-full h-full relative preserve-3d"
+        style={{ transformStyle: "preserve-3d" }}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{
+          duration: 0.6,
+          type: "spring",
+          stiffness: 200,
+          damping: 20,
+        }}
+      >
+        {/* Front of Card (Image) */}
+        <div
+          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-900"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="object-cover w-full h-full opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              {project.title}
+            </h3>
+            <div className="flex items-center gap-2 text-emerald-400 text-sm font-mono uppercase">
+              <IconHandClick size={16} className="animate-pulse" />
+              <span>Tap for details</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Back of Card (Details) */}
+        <div
+          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] bg-neutral-900 p-6 flex flex-col"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <h3 className="font-bold text-2xl text-white mb-4">
+            {project.title}
+          </h3>
+          <p className="text-neutral-300 text-sm flex-1 overflow-y-auto pr-2 custom-scrollbar">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-2 my-4">
+            {project.techStack.map((tech, idx) => (
+              <span
+                key={idx}
+                className="bg-black/50 border border-white/10 px-2 py-1 text-[10px] rounded-full text-emerald-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-4 pt-4 border-t border-white/10">
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
+            >
+              <IconExternalLink size={16} /> Live
+            </a>
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
+            >
+              <IconBrandGithub size={16} /> Source
+            </a>
+          </div>
+        </div>
+      </motion.div>
+    </div>
   );
 };
