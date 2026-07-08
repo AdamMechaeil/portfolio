@@ -38,7 +38,7 @@ export const Footer = () => {
       </div>
 
       {/* 3. The Massive Hover Typography (Bottom Row) */}
-      <div className="w-full mb-8 md:mb-0 mt-10 relative z-10 flex items-end justify-center">
+      <div className="w-full md:mb-0 mt-10 relative z-10 flex items-end justify-center">
         <div className="w-full md:w-[90vw] aspect-[500/80] md:aspect-auto md:h-[30vh] flex items-end">
           <TextHoverEffect text="adamn.in" />
         </div>

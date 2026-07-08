@@ -11,3 +11,11 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+model ContactMessage {
+  id        Int   @id @default(autoincrement())
+  name      String
+  email     String
+  mobile    String
+  query     String
+  createdAt DateTime @default(now())
+}
