@@ -14,7 +14,7 @@ export const SkillsSection = () => {
           >
             My Arsenal
           </h2>
-          <p className="text-emerald-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
+          <p className="text-blue-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
             // Technologies & Tools
           </p>
         </div>

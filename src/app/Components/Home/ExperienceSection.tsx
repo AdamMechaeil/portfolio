@@ -14,7 +14,7 @@ export const ExperienceSection = () => {
           >
             Main Quests
           </h2>
-          <p className="text-emerald-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
+          <p className="text-blue-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
             // Mission Logs & Experience
           </p>
         </div>
@@ -43,7 +43,7 @@ export const ExperienceSection = () => {
                     >
                       {item.role}
                     </h3>
-                    <h4 className="text-emerald-400 font-medium tracking-wide">
+                    <h4 className="text-blue-400 font-medium tracking-wide">
                       @ {item.company}
                     </h4>
                   </div>

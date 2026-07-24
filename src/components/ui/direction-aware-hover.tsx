@@ -25,7 +25,7 @@ export const DirectionAwareHover = ({
   >("left");
 
   const handleMouseEnter = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
     if (!ref.current) return;
 
@@ -51,7 +51,7 @@ export const DirectionAwareHover = ({
 
   const getDirection = (
     ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    obj: HTMLElement
+    obj: HTMLElement,
   ) => {
     const { width: w, height: h, left, top } = obj.getBoundingClientRect();
     const x = ev.clientX - left - (w / 2) * (w > h ? h / w : 1);
@@ -66,7 +66,7 @@ export const DirectionAwareHover = ({
       ref={ref}
       className={cn(
         "md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-xl overflow-hidden group/card relative",
-        className
+        className,
       )}
     >
       <AnimatePresence mode="wait">
@@ -76,12 +76,10 @@ export const DirectionAwareHover = ({
           whileHover={direction}
           exit="exit"
         >
-          <motion.div
-            className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/50 z-10 transition duration-500"
-          />
+          <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/75 z-10 transition duration-500" />
           <motion.div
             variants={variants}
-            className="h-full w-full relative bg-gray-50 dark:bg-black"
+            className="h-full w-full relative bg-transparent"
             transition={{
               duration: 0.2,
               ease: "easeOut",
@@ -89,10 +87,7 @@ export const DirectionAwareHover = ({
           >
             <img
               alt="image"
-              className={cn(
-                "h-full w-full object-cover scale-[1.15]",
-                imageClassName
-              )}
+              className={cn("h-full w-full object-cover", imageClassName)}
               src={imageUrl}
             />
           </motion.div>
@@ -104,7 +99,7 @@ export const DirectionAwareHover = ({
             }}
             className={cn(
               "text-white absolute bottom-4 left-4 z-40",
-              childrenClassName
+              childrenClassName,
             )}
           >
             {children}

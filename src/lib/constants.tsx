@@ -1,5 +1,10 @@
 import { Oswald } from "next/font/google";
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+  IconBrandX,
+} from "@tabler/icons-react";
 const getDevicon = (name: string, version: string = "original") =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
 export const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
@@ -54,22 +59,42 @@ export const wordsHero = [
   },
 ];
 
-export const projectsData = {
-  title: "Modern Sensei",
-  description:
-    "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
-  image: "/modernsensei.png",
-  techStack: [
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "MongoDb",
-    "Express",
-    "NodeJs",
-  ],
-  liveLink: "https://lms-client-jry7.onrender.com/",
-  githubLink: "https://github.com/AdamMechaeil/lms",
-};
+export const projectsData = [
+  {
+    title: "Modern Sensei",
+    description:
+      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
+    image: "/modernsensei.png",
+    mobileAlignment: "object-left-top",
+    techStack: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "MongoDb",
+      "Express",
+      "NodeJs",
+    ],
+    liveLink: "https://modernsensei.com/",
+    githubLink: "",
+  },
+  {
+    title: "Tharoorify",
+    description:
+      "Tharoorify is a 100% serverless, context-aware Chrome extension that acts as an on-demand dictionary and personal vocabulary logger. By keeping the user in their flow, it eliminates the friction of maintaining a daily revision vocabulary list.",
+    image: "/tharoorify.png",
+    mobileAlignment: "object-right-top",
+    techStack: [
+      "React",
+      "Vite",
+      "OAuth",
+      "TypeScript",
+      "Chrome API",
+      "Tailwind CSS",
+    ],
+    liveLink: "https://github.com/AdamMechaeil/Tharoorfiy",
+    githubLink: "https://github.com/AdamMechaeil/Tharoorfiy",
+  },
+];
 
 // The Arsenal Array
 export const arsenalItems = [
@@ -98,7 +123,7 @@ export const Socials = [
     link: "https://github.com/Adammechaeil",
     icon: (
       <IconBrandGithub
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),
@@ -108,7 +133,27 @@ export const Socials = [
     link: "https://www.linkedin.com/in/adam-mechaeil-763294194/",
     icon: (
       <IconBrandLinkedin
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "YouTube",
+    link: "https://www.youtube.com/@10adamn",
+    icon: (
+      <IconBrandYoutube
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "X",
+    link: "https://x.com/10adamn",
+    icon: (
+      <IconBrandX
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),

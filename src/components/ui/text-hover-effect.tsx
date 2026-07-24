@@ -47,7 +47,7 @@ export const TextHoverEffect = ({
           x2="100%"
           y2="0%"
         >
-          <stop offset="0%" stopColor={"#10b981"} /> {/* emerald-500 */}
+          <stop offset="0%" stopColor={"#3b82f6"} /> {/* blue-500 */}
           <stop offset="50%" stopColor={"#3b82f6"} /> {/* blue-500 */}
           <stop offset="100%" stopColor={"#06b6d4"} /> {/* cyan-500 */}
         </linearGradient>
