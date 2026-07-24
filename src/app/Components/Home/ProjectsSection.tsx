@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import {
   IconBrandGithub,
@@ -11,7 +18,6 @@ import {
 import { oswald, projectsData } from "@/lib/constants";
 
 export const ProjectsSection = () => {
-  // Placeholder Project Data
   return (
     <section className="relative w-full bg-blue-200/50 dark:bg-black py-20 md:py-32 overflow-hidden px-4 md:px-0 transition-colors duration-500">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[80%] hidden dark:block bg-blue-600/15 blur-[140px] pointer-events-none z-0 rounded-full" />
@@ -28,65 +34,95 @@ export const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-16 lg:gap-24 w-full mt-10">
-          <div className="flex flex-col items-center">
-            <div className="hidden md:block">
-              <DirectionAwareHover
-                imageUrl={projectsData.image}
-                className="w-[800px] h-[500px] border border-black/50 dark:border-white/30"
-                imageClassName="opacity-80"
-              >
-                <div className="flex flex-col gap-4 max-w-xl">
-                  <h3 className="font-bold text-3xl">{projectsData.title}</h3>
-                  <p className="text-neutral-200 text-sm">
-                    {projectsData.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {projectsData.techStack.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="bg-black/50 border border-white/20 px-3 py-1 text-xs rounded-full"
+        <div className="w-full max-w-xs md:max-w-5xl mx-auto mt-10 relative">
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {projectsData.map((project, idx) => (
+                <CarouselItem
+                  key={idx}
+                  className="pl-2 md:pl-4 md:basis-full flex justify-center"
+                >
+                  <div className="p-1 w-full flex justify-center">
+                    {/* Desktop View */}
+                    <div className="hidden md:flex w-full justify-center">
+                      <DirectionAwareHover
+                        imageUrl={project.image}
+                        className="w-full md:w-full max-w-[950px] aspect-video border rounded-3xl"
+                        imageClassName="object-cover object-top origin-top scale-[1.05]"
                       >
-                        {tech}
-                      </span>
-                    ))}
+                        <div className="flex flex-col gap-4 max-w-xl">
+                          <h3 className="font-bold text-3xl">
+                            {project.title}
+                          </h3>
+                          <p className="text-neutral-200 text-sm">
+                            {project.description}
+                          </p>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {project.techStack.map((tech, techIdx) => (
+                              <span
+                                key={techIdx}
+                                className="bg-black/50 border border-white/20 px-3 py-1 text-xs rounded-full"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex gap-4 mt-4">
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
+                            >
+                              <IconExternalLink size={18} /> Live Demo
+                            </a>
+                            <a
+                              href={project.githubLink}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
+                            >
+                              <IconBrandGithub size={18} /> Source Code
+                            </a>
+                          </div>
+                        </div>
+                      </DirectionAwareHover>
+                    </div>
+
+                    {/* Mobile View */}
+                    <div className="block md:hidden w-full max-w-[320px] mx-auto">
+                      <MobileFlipCard project={project} />
+                    </div>
                   </div>
-                  <div className="flex gap-4 mt-4">
-                    <a
-                      href={projectsData.liveLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
-                    >
-                      <IconExternalLink size={18} /> Live Demo
-                    </a>
-                    <a
-                      href={projectsData.githubLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
-                    >
-                      <IconBrandGithub size={18} /> Source Code
-                    </a>
-                  </div>
-                </div>
-              </DirectionAwareHover>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="absolute -left-12 lg:-left-20 bg-black dark:bg-white text-white dark:text-black hover:bg-emerald-500 hover:text-black dark:hover:bg-emerald-500 border-none shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all" />
+              <CarouselNext className="absolute -right-12 lg:-right-20 bg-black dark:bg-white text-white dark:text-black hover:bg-emerald-500 hover:text-black dark:hover:bg-emerald-500 border-none shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all" />
             </div>
-            <div className="block md:hidden mt-10 w-[95vw] max-w-[320px]">
-              <MobileFlipCard project={projectsData} />
-            </div>
+          </Carousel>
+          <div className="block md:hidden text-center mt-6 text-emerald-400 font-mono text-xs uppercase tracking-widest animate-pulse">
+            {"<"} Swipe for more {">"}
           </div>
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h3
-              className={`${oswald.className} text-3xl md:text-5xl font-black text-black/70 dark:text-white uppercase tracking-widest leading-tight`}
-            >
-              More Drops <br /> In The Vault.
-            </h3>
-            <div className="mt-8">
-              <span className="bg-black/50 text-white px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest border border-emerald-500/20 shadow-[0_0_15px_rgba(52,211,153,0.2)]">
-                [ Stay Tuned ]
-              </span>
-            </div>
+        </div>
+
+        {/* "More Drops" End Section */}
+        <div className="flex flex-col items-center text-center mt-20 mb-10">
+          <h3
+            className={`${oswald.className} text-3xl md:text-5xl font-black text-black/70 dark:text-white uppercase tracking-widest leading-tight`}
+          >
+            More Drops <br /> In The Vault.
+          </h3>
+          <div className="mt-8">
+            <span className="bg-black/50 text-white px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest border border-emerald-500/20 shadow-[0_0_15px_rgba(52,211,153,0.2)]">
+              [ Stay Tuned ]
+            </span>
           </div>
         </div>
       </div>
@@ -94,12 +130,12 @@ export const ProjectsSection = () => {
   );
 };
 
-const MobileFlipCard = ({ project }: { project: typeof projectsData }) => {
+const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div
-      className="relative w-full h-[400px] cursor-pointer"
+      className="relative w-full h-[400px] cursor-pointer max-w-[360px] mx-auto"
       style={{ perspective: "1000px" }}
       onClick={() => setIsFlipped(!isFlipped)}
     >
@@ -116,13 +152,13 @@ const MobileFlipCard = ({ project }: { project: typeof projectsData }) => {
       >
         {/* Front of Card (Image) */}
         <div
-          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-900"
+          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-gray-100 dark:bg-neutral-900"
           style={{ backfaceVisibility: "hidden" }}
         >
           <img
             src={project.image}
             alt={project.title}
-            className="object-cover w-full h-full opacity-90"
+            className={`object-cover w-full h-full opacity-90 ${project.mobileAlignment || "object-left-top"}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
             <h3 className="text-2xl font-bold text-white mb-2">

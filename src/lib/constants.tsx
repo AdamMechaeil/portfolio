@@ -1,5 +1,5 @@
 import { Oswald } from "next/font/google";
-import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconBrandYoutube, IconBrandX } from "@tabler/icons-react";
 const getDevicon = (name: string, version: string = "original") =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
 export const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
@@ -54,22 +54,34 @@ export const wordsHero = [
   },
 ];
 
-export const projectsData = {
-  title: "Modern Sensei",
-  description:
-    "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
-  image: "/modernsensei.png",
-  techStack: [
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "MongoDb",
-    "Express",
-    "NodeJs",
-  ],
-  liveLink: "https://lms-client-jry7.onrender.com/",
-  githubLink: "https://github.com/AdamMechaeil/lms",
-};
+export const projectsData = [
+  {
+    title: "Modern Sensei",
+    description:
+      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
+    image: "/modernsensei.png",
+    mobileAlignment: "object-left-top",
+    techStack: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "MongoDb",
+      "Express",
+      "NodeJs",
+    ],
+    liveLink: "https://modernsensei.com/",
+    githubLink: "",
+  },
+  {
+    title: "Chrome Extension",
+    description: "A powerful browser extension designed to boost productivity. Stay tuned for more details on its feature set and technical architecture.",
+    image: "/katana.png", // Using katana as a temporary placeholder image
+    mobileAlignment: "object-right-top",
+    techStack: ["React", "TypeScript", "Chrome API", "Tailwind CSS"],
+    liveLink: "#",
+    githubLink: "#",
+  }
+];
 
 // The Arsenal Array
 export const arsenalItems = [
@@ -108,6 +120,26 @@ export const Socials = [
     link: "https://www.linkedin.com/in/adam-mechaeil-763294194/",
     icon: (
       <IconBrandLinkedin
+        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "YouTube",
+    link: "https://youtube.com/",
+    icon: (
+      <IconBrandYoutube
+        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "X",
+    link: "https://x.com/",
+    icon: (
+      <IconBrandX
         className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
         size={24}
       />
