@@ -25,7 +25,7 @@ export const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 md:mb-24">
           <h2
-            className={`${oswald.className} text-4xl md:text-5xl font-bold text-white tracking-wider uppercase drop-shadow-lg`}
+            className={`${oswald.className} text-4xl md:text-6xl font-bold uppercase tracking-wider text-black dark:text-white text-shadow-[0px_0px_20px_rgba(0,0,0,0.35)] dark:text-shadow-[0px_0px_20px_rgba(255,255,255,0.6)]`}
           >
             Side Quests
           </h2>
@@ -115,9 +115,9 @@ export const ProjectsSection = () => {
         {/* "More Drops" End Section */}
         <div className="w-full flex flex-col items-center justify-center mt-20 mb-10">
           <h2
-            className={`${oswald.className} text-4xl md:text-6xl font-bold text-white uppercase tracking-wider text-center mb-6`}
+            className={`${oswald.className} text-3xl md:text-5xl font-bold uppercase tracking-wider text-center mb-6 text-black dark:text-white text-shadow-[0px_0px_20px_rgba(0,0,0,0.35)] dark:text-shadow-[0px_0px_20px_rgba(255,255,255,0.6)]`}
           >
-            MORE DROPS IN THE VAULT.
+            MORE DROPS IN THE VAULT...
           </h2>
           <div className="relative group cursor-not-allowed">
             <span className="bg-black/50 text-white px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
