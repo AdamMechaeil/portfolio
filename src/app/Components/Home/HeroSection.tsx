@@ -47,7 +47,7 @@ export const HeroSection = () => {
           />
 
           <h2
-            className={`${oswald.className} uppercase tracking-wider text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 font-extrabold mt-4 drop-shadow-lg`}
+            className={`${oswald.className} uppercase tracking-wider text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300 font-extrabold mt-4 drop-shadow-lg`}
           >
             Full Stack Engineer
           </h2>

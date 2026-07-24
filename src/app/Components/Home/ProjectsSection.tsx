@@ -25,11 +25,11 @@ export const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 md:mb-24">
           <h2
-            className={`${oswald.className} text-4xl md:text-6xl font-bold uppercase tracking-wider text-black dark:text-white text-shadow-[0px_0px_20px_rgba(0,0,0,0.35)] dark:text-shadow-[0px_0px_20px_rgba(255,255,255,0.6)]`}
+            className={`${oswald.className} text-4xl md:text-5xl font-bold text-white tracking-wider uppercase drop-shadow-lg`}
           >
             Side Quests
           </h2>
-          <p className="text-emerald-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
+          <p className="text-blue-400 font-mono text-sm md:text-base mt-2 uppercase tracking-widest">
             // Solo Ventures
           </p>
         </div>
@@ -76,16 +76,16 @@ export const ProjectsSection = () => {
                             <a
                               href={project.liveLink}
                               target="_blank"
-                              rel="noreferrer"
-                              className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
                             >
-                              <IconExternalLink size={18} /> Live Demo
+                              <IconExternalLink size={16} /> Live Demo
                             </a>
                             <a
                               href={project.githubLink}
                               target="_blank"
-                              rel="noreferrer"
-                              className="flex items-center gap-2 text-sm hover:text-emerald-400 transition-colors"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
                             >
                               <IconBrandGithub size={18} /> Source Code
                             </a>
@@ -103,24 +103,24 @@ export const ProjectsSection = () => {
               ))}
             </CarouselContent>
             <div className="hidden md:block">
-              <CarouselPrevious className="absolute -left-12 lg:-left-20 bg-black dark:bg-white text-white dark:text-black hover:bg-emerald-500 hover:text-black dark:hover:bg-emerald-500 border-none shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all" />
-              <CarouselNext className="absolute -right-12 lg:-right-20 bg-black dark:bg-white text-white dark:text-black hover:bg-emerald-500 hover:text-black dark:hover:bg-emerald-500 border-none shadow-[0_0_15px_rgba(52,211,153,0.3)] transition-all" />
+              <CarouselPrevious className="absolute -left-12 lg:-left-20 bg-black dark:bg-white text-white dark:text-black hover:bg-blue-500 hover:text-black dark:hover:bg-blue-500 border-none shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all" />
+              <CarouselNext className="absolute -right-12 lg:-right-20 bg-black dark:bg-white text-white dark:text-black hover:bg-blue-500 hover:text-black dark:hover:bg-blue-500 border-none shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all" />
             </div>
           </Carousel>
-          <div className="block md:hidden text-center mt-6 text-emerald-400 font-mono text-xs uppercase tracking-widest animate-pulse">
+          <div className="block md:hidden text-center mt-6 text-blue-400 font-mono text-xs uppercase tracking-widest animate-pulse">
             {"<"} Swipe for more {">"}
           </div>
         </div>
 
         {/* "More Drops" End Section */}
-        <div className="flex flex-col items-center text-center mt-20 mb-10">
-          <h3
-            className={`${oswald.className} text-3xl md:text-5xl font-black text-black/70 dark:text-white uppercase tracking-widest leading-tight`}
+        <div className="w-full flex flex-col items-center justify-center mt-20 mb-10">
+          <h2
+            className={`${oswald.className} text-4xl md:text-6xl font-bold text-white uppercase tracking-wider text-center mb-6`}
           >
-            More Drops <br /> In The Vault.
-          </h3>
-          <div className="mt-8">
-            <span className="bg-black/50 text-white px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest border border-emerald-500/20 shadow-[0_0_15px_rgba(52,211,153,0.2)]">
+            MORE DROPS IN THE VAULT.
+          </h2>
+          <div className="relative group cursor-not-allowed">
+            <span className="bg-black/50 text-white px-6 py-2 rounded-full font-bold text-xs md:text-sm uppercase tracking-widest border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
               [ Stay Tuned ]
             </span>
           </div>
@@ -164,7 +164,7 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             <h3 className="text-2xl font-bold text-white mb-2">
               {project.title}
             </h3>
-            <div className="flex items-center gap-2 text-emerald-400 text-sm font-mono uppercase">
+            <div className="flex items-center gap-2 text-blue-400 text-sm font-mono uppercase">
               <IconHandClick size={16} className="animate-pulse" />
               <span>Tap for details</span>
             </div>
@@ -173,8 +173,11 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
 
         {/* Back of Card (Details) */}
         <div
-          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.15)] bg-neutral-900 p-6 flex flex-col"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+          className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.15)] bg-neutral-900 p-6 flex flex-col"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
         >
           <h3 className="font-bold text-2xl text-white mb-4">
             {project.title}
@@ -186,7 +189,7 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             {project.techStack.map((tech, idx) => (
               <span
                 key={idx}
-                className="bg-black/50 border border-white/10 px-2 py-1 text-[10px] rounded-full text-emerald-300"
+                className="bg-black/50 border border-white/10 px-2 py-1 text-[10px] rounded-full text-blue-300"
               >
                 {tech}
               </span>
@@ -196,16 +199,16 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             <a
               href={project.liveLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
             >
               <IconExternalLink size={16} /> Live
             </a>
             <a
               href={project.githubLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
             >

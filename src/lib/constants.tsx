@@ -123,7 +123,7 @@ export const Socials = [
     link: "https://github.com/Adammechaeil",
     icon: (
       <IconBrandGithub
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),
@@ -133,27 +133,27 @@ export const Socials = [
     link: "https://www.linkedin.com/in/adam-mechaeil-763294194/",
     icon: (
       <IconBrandLinkedin
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),
   },
   {
     name: "YouTube",
-    link: "https://youtube.com/",
+    link: "https://www.youtube.com/@10adamn",
     icon: (
       <IconBrandYoutube
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),
   },
   {
     name: "X",
-    link: "https://x.com/",
+    link: "https://x.com/10adamn",
     icon: (
       <IconBrandX
-        className="text-white/70 group-hover:text-emerald-400 relative z-10 transition-colors"
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
     ),

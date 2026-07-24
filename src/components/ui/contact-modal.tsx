@@ -82,7 +82,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <h2
                   className={`${oswald.className} text-3xl font-bold uppercase tracking-wide text-white drop-shadow-md mb-2`}
                 >
-                  Initiate <span className="text-emerald-400">Comms</span>
+                  Initiate <span className="text-blue-400">Comms</span>
                 </h2>
                 <p className="font-mono text-sm text-white/50 uppercase tracking-widest">
                   // Ping my terminal directly
@@ -101,7 +101,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
+                    className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
                     placeholder="John Doe"
                   />
                 </div>
@@ -117,7 +117,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
+                      className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -131,7 +131,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                       required
                       value={formData.mobile}
                       onChange={handleChange}
-                      className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
+                      className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 hover:bg-white/10"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -147,7 +147,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     rows={4}
                     value={formData.query}
                     onChange={handleChange}
-                    className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all placeholder:text-white/20 hover:bg-white/10 resize-none"
+                    className="bg-white/5 border border-white/10 text-white rounded-lg px-4 py-3 w-full focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 hover:bg-white/10 resize-none"
                     placeholder="How can I help you?"
                   />
                 </div>
@@ -158,8 +158,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   className={`mt-4 w-full rounded-lg py-3.5 px-4 font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2
                     ${
                       status === "success"
-                        ? "bg-emerald-500 text-black"
-                        : "bg-white text-black hover:bg-emerald-400 hover:scale-[1.02] active:scale-95"
+                        ? "bg-blue-500 text-black"
+                        : "bg-white text-black hover:bg-blue-400 hover:scale-[1.02] active:scale-95"
                     }
                   `}
                 >

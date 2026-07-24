@@ -30,7 +30,7 @@ export default function NotFound() {
             404
           </h1>
           <h1
-            className={`${oswald.className} text-[120px] md:text-[200px] font-black text-emerald-400 tracking-tighter absolute inset-0 select-none drop-shadow-[0_0_30px_rgba(16,185,129,0.3)]`}
+            className={`${oswald.className} text-[120px] md:text-[200px] font-black text-blue-400 tracking-tighter absolute inset-0 select-none drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]`}
           >
             404
           </h1>
@@ -59,8 +59,8 @@ export default function NotFound() {
           className="mt-12"
         >
           <Link href="/">
-            <button className="group relative px-8 py-4 bg-transparent text-white font-mono uppercase tracking-widest text-sm overflow-hidden rounded-full border border-white/20 hover:border-emerald-500/50 transition-colors duration-300">
-              <div className="absolute inset-0 bg-emerald-500/10 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-in-out" />
+            <button className="group relative px-8 py-4 bg-transparent text-white font-mono uppercase tracking-widest text-sm overflow-hidden rounded-full border border-white/20 hover:border-blue-500/50 transition-colors duration-300">
+              <div className="absolute inset-0 bg-blue-500/10 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-in-out" />
               <span className="relative z-10 flex items-center gap-2">
                 <IconArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform duration-300" />
                 Return to Base
