@@ -17,6 +17,7 @@ model ContactMessage {
   email      String
   mobile     String?
   query      String
+  read       Boolean  @default(false)
   visitorKey String?
   createdAt  DateTime @default(now())
 
