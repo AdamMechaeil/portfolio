@@ -1,10 +1,12 @@
 import { Navigation } from "./Components/Shared/Navigation";
 import { Preloader } from "./Components/Home/Preloader";
 import { HeroSection } from "./Components/Home/HeroSection";
+import { AboutSection } from "./Components/Home/AboutSection";
 import { ExperienceSection } from "./Components/Home/ExperienceSection";
 import { SkillsSection } from "./Components/Home/SkillsSection";
 import { ProjectsSection } from "./Components/Home/ProjectsSection";
 import { Footer } from "./Components/Shared/Footer";
+import { SectionDivider } from "./Components/Shared/SectionDivider";
 
 export default function Home() {
   return (
@@ -12,20 +14,12 @@ export default function Home() {
       <Preloader />
       <Navigation />
       <HeroSection />
+      <AboutSection />
+      <SectionDivider />
       <ExperienceSection />
-
-      {/* // Horizontal line with glow for separating sections */}
-      <div className="w-full bg-blue-200/50 dark:bg-black flex justify-center items-center">
-        <div className="w-3/4 md:w-1/2 h-[3px] bg-gradient-to-r from-transparent via-black/50 dark:via-white/40 to-transparent" />
-      </div>
-
+      <SectionDivider />
       <SkillsSection />
-
-      {/* // Horizontal line with glow for separating sections */}
-      <div className="w-full bg-blue-200/50 dark:bg-black flex justify-center items-center">
-        <div className="w-3/4 md:w-1/2 h-[3px] bg-gradient-to-r from-transparent via-black/50 dark:via-white/40 to-transparent" />
-      </div>
-
+      <SectionDivider />
       <ProjectsSection />
       <Footer />
     </main>

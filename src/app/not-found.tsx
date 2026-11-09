@@ -9,6 +9,7 @@ import { IconArrowLeft } from "@tabler/icons-react";
 export default function NotFound() {
   return (
     <div className="h-screen w-full bg-neutral-950 flex flex-col items-center justify-center relative overflow-hidden antialiased">
+      <title>Page not found - Adam Mechaeil</title>
       <BackgroundBeams />
       
       <div className="relative z-10 flex flex-col items-center justify-center p-4">
@@ -24,16 +25,18 @@ export default function NotFound() {
           >
             404
           </h1>
-          <h1
+          <div
+            aria-hidden="true"
             className={`${oswald.className} text-[120px] md:text-[200px] font-black text-transparent bg-clip-text bg-gradient-to-b from-neutral-200 to-neutral-600 tracking-tighter absolute inset-0 blur-[2px] opacity-50 select-none`}
           >
             404
-          </h1>
-          <h1
+          </div>
+          <div
+            aria-hidden="true"
             className={`${oswald.className} text-[120px] md:text-[200px] font-black text-blue-400 tracking-tighter absolute inset-0 select-none drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]`}
           >
             404
-          </h1>
+          </div>
         </motion.div>
 
         {/* Subtitles */}
@@ -58,14 +61,15 @@ export default function NotFound() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-12"
         >
-          <Link href="/">
-            <button className="group relative px-8 py-4 bg-transparent text-white font-mono uppercase tracking-widest text-sm overflow-hidden rounded-full border border-white/20 hover:border-blue-500/50 transition-colors duration-300">
-              <div className="absolute inset-0 bg-blue-500/10 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-in-out" />
-              <span className="relative z-10 flex items-center gap-2">
-                <IconArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform duration-300" />
-                Return to Base
-              </span>
-            </button>
+          <Link
+            href="/"
+            className="group relative inline-block px-8 py-4 bg-transparent text-white font-mono uppercase tracking-widest text-sm overflow-hidden rounded-full border border-white/20 hover:border-blue-500/50 transition-colors duration-300"
+          >
+            <span className="absolute inset-0 bg-blue-500/10 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-in-out" />
+            <span className="relative z-10 flex items-center gap-2">
+              <IconArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform duration-300" />
+              Return to Base
+            </span>
           </Link>
         </motion.div>
       </div>

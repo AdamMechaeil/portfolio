@@ -1,18 +1,22 @@
 import { Oswald } from "next/font/google";
 import {
   IconBrandGithub,
+  IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandYoutube,
   IconBrandX,
 } from "@tabler/icons-react";
+import { socialUrls } from "@/lib/site";
+// Pinned so an upstream icon rename can never silently break the arsenal row.
+const DEVICON_VERSION = "2.18.0";
 const getDevicon = (name: string, version: string = "original") =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@${DEVICON_VERSION}/icons/${name}/${name}-${version}.svg`;
 export const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 export const experienceData = [
   {
     role: "Full Stack Developer and Trainer",
     company: "Techstack",
-    location: "Delhi,India",
+    location: "Delhi, India",
     date: "December 2023 - January 2026",
     description:
       "Architected a secure, production-grade LMS for 200+ students, featuring JWT-based RBAC and an atomic ID generation system for data integrity. Additionally, automated Google Meet scheduling and attendance tracking, saving the operations team over 10 hours per week.",
@@ -23,15 +27,15 @@ export const experienceData = [
       "AWS",
       "System Architecture",
       "Java Core",
-      "MYSQL",
-      "MongoDb",
+      "MySQL",
+      "MongoDB",
       "Docker",
     ],
   },
   {
-    role: "Javascript Developer",
+    role: "JavaScript Developer",
     company: "Proses Web Technologies",
-    location: "Vadodra Gujrat",
+    location: "Vadodara, Gujarat",
     date: "November 2022 - August 2023",
     description:
       "Optimized legacy React and Express.js applications, boosting Lighthouse performance scores to 92 and reducing load times to under two seconds. Modernized the platform with a responsive Tailwind CSS UI and resolved critical payment gateway bugs to ensure transaction reliability.",
@@ -40,7 +44,7 @@ export const experienceData = [
       "TypeScript",
       "Tailwind CSS",
       "MySQL",
-      "MongoDb",
+      "MongoDB",
       "Node.js",
       "AWS",
       "Docker",
@@ -63,19 +67,19 @@ export const projectsData = [
   {
     title: "Modern Sensei",
     description:
-      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
+      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches, admissions, students, batches to handling CRM easily.",
     image: "/modernsensei.png",
     mobileAlignment: "object-left-top",
     techStack: [
       "React",
       "Next.js",
       "Tailwind CSS",
-      "MongoDb",
+      "MongoDB",
       "Express",
-      "NodeJs",
+      "Node.js",
     ],
-    liveLink: "https://modernsensei.com/",
-    githubLink: "",
+    liveLink: "https://lms-client-jry7.onrender.com",
+    githubLink: "https://github.com/AdamMechaeil/lms",
   },
   {
     title: "Tharoorify",
@@ -91,7 +95,7 @@ export const projectsData = [
       "Chrome API",
       "Tailwind CSS",
     ],
-    liveLink: "https://github.com/AdamMechaeil/Tharoorfiy",
+    liveLink: "",
     githubLink: "https://github.com/AdamMechaeil/Tharoorfiy",
   },
 ];
@@ -101,7 +105,7 @@ export const arsenalItems = [
   { name: "React.js", imgSrc: getDevicon("react") },
   { name: "Node.js", imgSrc: getDevicon("nodejs", "original-wordmark") },
   { name: "TypeScript", imgSrc: getDevicon("typescript") },
-  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original-wordmark") },
+  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original") },
   { name: "Next.js", imgSrc: getDevicon("nextjs", "original") },
   { name: "Tailwind CSS", imgSrc: getDevicon("tailwindcss") },
   { name: "MongoDB", imgSrc: getDevicon("mongodb", "original-wordmark") },
@@ -119,8 +123,8 @@ export const arsenalItems = [
 
 export const Socials = [
   {
-    name: "Github",
-    link: "https://github.com/Adammechaeil",
+    name: "GitHub",
+    link: socialUrls.github,
     icon: (
       <IconBrandGithub
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -130,7 +134,7 @@ export const Socials = [
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/adam-mechaeil-763294194/",
+    link: socialUrls.linkedin,
     icon: (
       <IconBrandLinkedin
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -140,7 +144,7 @@ export const Socials = [
   },
   {
     name: "YouTube",
-    link: "https://www.youtube.com/@10adamn",
+    link: socialUrls.youtube,
     icon: (
       <IconBrandYoutube
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -150,9 +154,19 @@ export const Socials = [
   },
   {
     name: "X",
-    link: "https://x.com/10adamn",
+    link: socialUrls.x,
     icon: (
       <IconBrandX
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "Instagram",
+    link: socialUrls.instagram,
+    icon: (
+      <IconBrandInstagram
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />

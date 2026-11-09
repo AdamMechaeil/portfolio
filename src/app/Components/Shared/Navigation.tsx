@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useTheme } from "next-themes";
 import {
@@ -10,29 +11,17 @@ import {
   IconFileDownload,
 } from "@tabler/icons-react";
 import { ContactModal } from "@/components/ui/contact-modal";
+import { Clock } from "./Clock";
 
 export const Navigation = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [time, setTime] = useState("");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const updateTime = () => {
-      setTime(
-        new Date().toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        }),
-      );
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -63,44 +52,52 @@ export const Navigation = () => {
           }}
           transition={{ duration: 0.2 }}
         >
-          <img
+          <Image
             src="/logo.png"
             alt="AM"
-            className="w-12 h-12 object-cover rounded-corners invert drop-shadow-md"
+            width={48}
+            height={48}
+            priority
+            className="w-12 h-12 object-cover invert drop-shadow-md"
           />
         </motion.div>
         <div
           className={`flex items-center gap-4 drop-shadow-md ${isScrolled ? "w-full justify-between" : ""}`}
         >
-          {mounted && (
-            <span className="text-sm font-medium tabular-nums drop-shadow-md text-white">
-              {time}
-            </span>
-          )}
+          <Clock />
 
+          {/* The after: pseudo-element widens each tap target to 44px without
+              changing how the button looks. */}
           <div className="flex items-center gap-3">
             <button
+              type="button"
               onClick={() => setIsModalOpen(true)}
-              className="p-2 rounded-full hover:bg-black/10 drop-shadow-md text-white transition-colors"
+              className="relative p-2 rounded-full hover:bg-black/10 drop-shadow-md text-white transition-colors after:absolute after:-inset-1 after:content-['']"
               title="Contact Me"
+              aria-label="Contact me"
             >
               <IconMail size={20} />
             </button>
 
             <a
               href="/resume.pdf"
-              download
-              className="p-2 rounded-full hover:bg-black/10 transition-colors drop-shadow-md text-white"
+              download="Adam-Mechaeil-Resume.pdf"
+              className="relative p-2 rounded-full hover:bg-black/10 transition-colors drop-shadow-md text-white after:absolute after:-inset-1 after:content-['']"
               title="Download Resume"
+              aria-label="Download resume"
             >
               <IconFileDownload size={20} />
             </a>
 
             {mounted && (
               <button
+                type="button"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 rounded-full hover:bg-black/10 transition-colors drop-shadow-md text-white"
+                className="relative p-2 rounded-full hover:bg-black/10 transition-colors drop-shadow-md text-white after:absolute after:-inset-1 after:content-['']"
                 title="Toggle Theme"
+                aria-label={
+                  theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+                }
               >
                 {theme === "dark" ? (
                   <IconSun size={20} />

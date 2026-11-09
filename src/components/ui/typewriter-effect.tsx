@@ -9,6 +9,7 @@ export const TypewriterEffect = ({
   className,
   cursorClassName,
   startDelay,
+  enabled = true,
 }: {
   words: {
     text: string;
@@ -17,6 +18,7 @@ export const TypewriterEffect = ({
   className?: string;
   cursorClassName?: string;
   startDelay?: number;
+  enabled?: boolean;
 }) => {
   // Split text inside of words into array of characters
   const wordsArray = words.map((word) => {
@@ -30,7 +32,7 @@ export const TypewriterEffect = ({
   const isInView = useInView(scope);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && enabled) {
       const timeout = setTimeout(() => {
         animate(
           "span",
@@ -49,7 +51,7 @@ export const TypewriterEffect = ({
 
       return () => clearTimeout(timeout);
     }
-  }, [isInView, animate, startDelay]);
+  }, [isInView, enabled, animate, startDelay]);
 
   const renderWords = () => {
     return (

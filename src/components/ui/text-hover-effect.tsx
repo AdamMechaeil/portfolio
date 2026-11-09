@@ -56,6 +56,9 @@ export const TextHoverEffect = ({
           id="revealMask"
           gradientUnits="userSpaceOnUse"
           r="30%"
+          cx="50%"
+          cy="50%"
+          initial={{ cx: "50%", cy: "50%" }}
           animate={{
             cx: maskPosition.cx ?? "50%",
             cy: maskPosition.cy ?? "50%",

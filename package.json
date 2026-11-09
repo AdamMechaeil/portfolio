@@ -11,13 +11,14 @@
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "@tabler/icons-react": "^3.44.0",
+    "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.42.2",
-    "motion": "^12.42.2",
     "next": "16.2.9",
+    "next-auth": "^5.0.0-beta.32",
     "next-themes": "^0.4.6",
     "pg": "^8.22.0",
     "radix-ui": "^1.5.0",
@@ -35,7 +36,6 @@
     "@types/react-dom": "^19",
     "prisma": "^7.8.0",
     "tailwindcss": "^4",
-    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }

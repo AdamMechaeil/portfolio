@@ -27,6 +27,7 @@ export const Footer = () => {
                 href={e.link}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={e.name}
                 className="group relative p-3 rounded-full bg-white/5 border border-white/10 hover:border-blue-500/50 transition-colors duration-300"
               >
                 <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
