@@ -140,6 +140,11 @@
   }
 }
 
+/* Hides the intro overlay for returning visitors (class set by the inline script in layout.tsx). */
+html.intro-skip [data-preloader] {
+  display: none;
+}
+
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.75rem));

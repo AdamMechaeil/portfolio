@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig, socialUrls } from "@/lib/site";
+import { introGuardScript } from "@/lib/intro";
 
 const outfitHeading = Outfit({
   subsets: ["latin"],
@@ -70,6 +71,9 @@ export default function RootLayout({
         outfitHeading.variable,
       )}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: introGuardScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

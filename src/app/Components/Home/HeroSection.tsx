@@ -1,9 +1,24 @@
 "use client";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { oswald, wordsHero } from "@/lib/constants";
+import { INTRO_DONE_EVENT, shouldSkipIntro } from "@/lib/intro";
 
 export const HeroSection = () => {
+  // The name types out as soon as the intro ends (or at once if it is skipped).
+  const [introDone, setIntroDone] = useState(false);
+
+  useEffect(() => {
+    if (shouldSkipIntro()) {
+      setIntroDone(true);
+      return;
+    }
+    const onDone = () => setIntroDone(true);
+    window.addEventListener(INTRO_DONE_EVENT, onDone);
+    return () => window.removeEventListener(INTRO_DONE_EVENT, onDone);
+  }, []);
+
   return (
     <section className="relative w-full h-[100vh] overflow-hidden bg-black flex flex-col md:flex-row shadow-xl">
       <div className="relative w-full h-1/2 md:w-1/2 md:h-full overflow-hidden">
@@ -45,7 +60,8 @@ export const HeroSection = () => {
             <TypewriterEffect
               words={wordsHero}
               cursorClassName="bg-blue-500"
-              startDelay={8100}
+              enabled={introDone}
+              startDelay={100}
             />
           </div>
 
