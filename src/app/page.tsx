@@ -1,6 +1,7 @@
 import { Navigation } from "./Components/Shared/Navigation";
 import { Preloader } from "./Components/Home/Preloader";
 import { HeroSection } from "./Components/Home/HeroSection";
+import { AboutSection } from "./Components/Home/AboutSection";
 import { ExperienceSection } from "./Components/Home/ExperienceSection";
 import { SkillsSection } from "./Components/Home/SkillsSection";
 import { ProjectsSection } from "./Components/Home/ProjectsSection";
@@ -13,6 +14,8 @@ export default function Home() {
       <Preloader />
       <Navigation />
       <HeroSection />
+      <AboutSection />
+      <SectionDivider />
       <ExperienceSection />
       <SectionDivider />
       <SkillsSection />
