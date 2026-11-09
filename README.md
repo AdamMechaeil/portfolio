@@ -1,4 +1,4 @@
-# Adam Mechaeil | Full Stack Developer
+# Adam Mechaeil | Full Stack Engineer
 
 Welcome to my personal portfolio repository. This project is a highly-interactive, full-stack web application built to showcase my skills, projects, and professional experience.
 

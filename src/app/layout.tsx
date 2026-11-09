@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Noto_Serif, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig, socialUrls } from "@/lib/site";
 
 const outfitHeading = Outfit({
   subsets: ["latin"],
@@ -22,9 +23,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adam's Portfolio",
-  description:
-    "Welcome to Adam Mechaeil's portfolio. I am a Software Engineer with expertise in various web technologies and AI. Explore my work and feel free to reach out.",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  jobTitle: siteConfig.role,
+  sameAs: Object.values(socialUrls),
 };
 
 export default function RootLayout({
@@ -47,6 +71,12 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -40,11 +40,14 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-[15] pointer-events-none backdrop-blur-[3px] backdrop-brightness-70 backdrop-contrast-120 backdrop-saturate-130" />
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none mt-16">
         <div className="w-[95%] md:w-[70%] lg:w-[60%] p-4 md:p-8 pointer-events-auto text-center flex flex-col items-center">
-          <TypewriterEffect
-            words={wordsHero}
-            cursorClassName="bg-blue-500"
-            startDelay={8100}
-          />
+          <h1 className="sr-only">Adam Mechaeil</h1>
+          <div aria-hidden="true">
+            <TypewriterEffect
+              words={wordsHero}
+              cursorClassName="bg-blue-500"
+              startDelay={8100}
+            />
+          </div>
 
           <h2
             className={`${oswald.className} uppercase tracking-wider text-2xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300 font-extrabold mt-4 drop-shadow-lg`}

@@ -1,10 +1,12 @@
 import { Oswald } from "next/font/google";
 import {
   IconBrandGithub,
+  IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandYoutube,
   IconBrandX,
 } from "@tabler/icons-react";
+import { socialUrls } from "@/lib/site";
 const getDevicon = (name: string, version: string = "original") =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
 export const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
@@ -120,7 +122,7 @@ export const arsenalItems = [
 export const Socials = [
   {
     name: "Github",
-    link: "https://github.com/Adammechaeil",
+    link: socialUrls.github,
     icon: (
       <IconBrandGithub
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -130,7 +132,7 @@ export const Socials = [
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/adam-mechaeil-763294194/",
+    link: socialUrls.linkedin,
     icon: (
       <IconBrandLinkedin
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -140,7 +142,7 @@ export const Socials = [
   },
   {
     name: "YouTube",
-    link: "https://www.youtube.com/@10adamn",
+    link: socialUrls.youtube,
     icon: (
       <IconBrandYoutube
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
@@ -150,9 +152,19 @@ export const Socials = [
   },
   {
     name: "X",
-    link: "https://x.com/10adamn",
+    link: socialUrls.x,
     icon: (
       <IconBrandX
+        className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
+        size={24}
+      />
+    ),
+  },
+  {
+    name: "Instagram",
+    link: socialUrls.instagram,
+    icon: (
+      <IconBrandInstagram
         className="text-white/70 group-hover:text-blue-400 relative z-10 transition-colors"
         size={24}
       />
