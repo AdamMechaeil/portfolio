@@ -131,6 +131,10 @@ const TooltipCard = ({ item }: { item: { name: string; imgSrc: string } }) => {
         <img
           src={item.imgSrc}
           alt={item.name}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
         />
       </div>

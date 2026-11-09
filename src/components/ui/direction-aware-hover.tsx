@@ -7,12 +7,16 @@ import { cn } from "@/lib/utils";
 
 export const DirectionAwareHover = ({
   imageUrl,
+  imageAlt = "",
+  imageSizes = "100vw",
   children,
   childrenClassName,
   imageClassName,
   className,
 }: {
   imageUrl: string;
+  imageAlt?: string;
+  imageSizes?: string;
   children: React.ReactNode | string;
   childrenClassName?: string;
   imageClassName?: string;
@@ -85,9 +89,11 @@ export const DirectionAwareHover = ({
               ease: "easeOut",
             }}
           >
-            <img
-              alt="image"
-              className={cn("h-full w-full object-cover", imageClassName)}
+            <Image
+              alt={imageAlt}
+              fill
+              sizes={imageSizes}
+              className={cn("object-cover", imageClassName)}
               src={imageUrl}
             />
           </motion.div>

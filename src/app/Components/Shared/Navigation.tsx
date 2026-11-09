@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useTheme } from "next-themes";
 import {
@@ -63,9 +64,12 @@ export const Navigation = () => {
           }}
           transition={{ duration: 0.2 }}
         >
-          <img
+          <Image
             src="/logo.png"
             alt="AM"
+            width={48}
+            height={48}
+            priority
             className="w-12 h-12 object-cover invert drop-shadow-md"
           />
         </motion.div>

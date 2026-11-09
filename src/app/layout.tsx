@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Serif, Outfit } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig, socialUrls } from "@/lib/site";
 import { introGuardScript } from "@/lib/intro";
-
-const outfitHeading = Outfit({
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
 
 const notoSerif = Noto_Serif({ subsets: ["latin"], variable: "--font-serif" });
 
@@ -68,7 +63,6 @@ export default function RootLayout({
         geistMono.variable,
         "font-serif",
         notoSerif.variable,
-        outfitHeading.variable,
       )}
     >
       <head>

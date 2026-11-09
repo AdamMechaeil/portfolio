@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -52,6 +53,8 @@ export const ProjectsSection = () => {
                     <div className="hidden md:flex w-full justify-center">
                       <DirectionAwareHover
                         imageUrl={project.image}
+                        imageAlt={`${project.title} screenshot`}
+                        imageSizes="950px"
                         className="w-full md:w-full max-w-[950px] aspect-video border rounded-3xl"
                         imageClassName="object-cover object-top origin-top scale-[1.05]"
                       >
@@ -159,10 +162,12 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
           className="absolute inset-0 w-full h-full backface-hidden rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-gray-100 dark:bg-neutral-900"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <img
+          <Image
             src={project.image}
-            alt={project.title}
-            className={`object-cover w-full h-full opacity-90 ${project.mobileAlignment || "object-left-top"}`}
+            alt={`${project.title} screenshot`}
+            fill
+            sizes="360px"
+            className={`object-cover opacity-90 ${project.mobileAlignment || "object-left-top"}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
             <p className="text-2xl font-bold text-white mb-2">

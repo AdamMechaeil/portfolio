@@ -7,8 +7,10 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import { socialUrls } from "@/lib/site";
+// Pinned so an upstream icon rename can never silently break the arsenal row.
+const DEVICON_VERSION = "2.18.0";
 const getDevicon = (name: string, version: string = "original") =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${version}.svg`;
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@${DEVICON_VERSION}/icons/${name}/${name}-${version}.svg`;
 export const oswald = Oswald({ subsets: ["latin"], weight: ["400", "700"] });
 export const experienceData = [
   {
@@ -103,7 +105,7 @@ export const arsenalItems = [
   { name: "React.js", imgSrc: getDevicon("react") },
   { name: "Node.js", imgSrc: getDevicon("nodejs", "original-wordmark") },
   { name: "TypeScript", imgSrc: getDevicon("typescript") },
-  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original-wordmark") },
+  { name: "AWS", imgSrc: getDevicon("amazonwebservices", "original") },
   { name: "Next.js", imgSrc: getDevicon("nextjs", "original") },
   { name: "Tailwind CSS", imgSrc: getDevicon("tailwindcss") },
   { name: "MongoDB", imgSrc: getDevicon("mongodb", "original-wordmark") },
