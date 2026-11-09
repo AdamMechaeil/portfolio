@@ -110,7 +110,7 @@ export const AboutSection = () => {
           </dl>
 
           <div className="mt-8 space-y-3">
-            <p className="font-mono text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
+            <p className="font-mono text-xs uppercase tracking-widest text-black/60 dark:text-white/60">
               // Open to
             </p>
             <ul className="flex flex-wrap gap-2">
@@ -126,7 +126,7 @@ export const AboutSection = () => {
           </div>
 
           <div className="mt-6 space-y-3">
-            <p className="font-mono text-xs uppercase tracking-widest text-black/40 dark:text-white/40">
+            <p className="font-mono text-xs uppercase tracking-widest text-black/60 dark:text-white/60">
               // Ask me about
             </p>
             <ul className="flex flex-wrap gap-2">

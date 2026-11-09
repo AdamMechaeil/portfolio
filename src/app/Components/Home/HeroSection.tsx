@@ -12,6 +12,10 @@ export const HeroSection = () => {
   // The name types out and the hero videos start playing as soon as the intro
   // ends (or at once if it is skipped), so the two never compete for decoding.
   const [introDone, setIntroDone] = useState(false);
+  // The hero videos are the biggest files on the page, so they wait until the
+  // scripts and images the page needs first have arrived, then preload while
+  // the intro is still playing.
+  const [preloadVideos, setPreloadVideos] = useState(false);
   const reduceMotion = useReducedMotion();
   const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
   // The katana's endless float (blur + shadow) repaints the whole hero, which
@@ -29,6 +33,23 @@ export const HeroSection = () => {
   }, []);
 
   useEffect(() => {
+    const start = () => setPreloadVideos(true);
+    if (document.readyState === "complete") {
+      const timer = setTimeout(start, 300);
+      return () => clearTimeout(timer);
+    }
+    let timer: ReturnType<typeof setTimeout>;
+    const onLoad = () => {
+      timer = setTimeout(start, 300);
+    };
+    window.addEventListener("load", onLoad, { once: true });
+    return () => {
+      window.removeEventListener("load", onLoad);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!introDone) return;
     videosRef.current.forEach((video) => {
       if (!video) return;
@@ -41,7 +62,7 @@ export const HeroSection = () => {
   }, [introDone, reduceMotion]);
 
   return (
-    <section className="relative w-full h-[100vh] overflow-hidden bg-black flex flex-col md:flex-row shadow-xl">
+    <section className="relative w-full h-[100svh] overflow-hidden bg-black flex flex-col md:flex-row shadow-xl">
       <div className="relative w-full h-1/2 md:w-1/2 md:h-full overflow-hidden">
         <video
           ref={(el) => {
@@ -50,7 +71,7 @@ export const HeroSection = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload={preloadVideos ? "auto" : "none"}
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center scale-100 md:scale-105"
         >
@@ -66,7 +87,7 @@ export const HeroSection = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload={preloadVideos ? "auto" : "none"}
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center scale-100 md:scale-105"
         >
@@ -81,7 +102,7 @@ export const HeroSection = () => {
         height={1536}
         sizes="2400px"
         priority
-        className="absolute inset-0 m-auto z-[16] h-[130%] md:h-[120%] md:w-auto w-full object-cover rotate-90 md:rotate-0 drop-shadow-2xl pointer-events-none blur-[2.5px]"
+        className="absolute inset-0 m-auto z-[16] h-[130%] md:h-[120%] md:w-auto w-full object-cover rotate-90 md:rotate-0 drop-shadow-2xl pointer-events-none blur-[2.5px] will-change-transform"
         animate={floatKatana ? { y: [0, -15, 0] } : { y: 0 }}
         transition={
           floatKatana

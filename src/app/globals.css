@@ -137,6 +137,24 @@
   .animate-scroll {
     animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
   }
+  /* Like animate-pulse, but it never dims enough to fail text contrast. */
+  .animate-soft-pulse {
+    animation: soft-pulse 2s ease-in-out infinite;
+  }
+}
+
+/* Still hints and pulses stay still for visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-soft-pulse,
+  .animate-pulse {
+    animation: none;
+  }
+}
+
+@keyframes soft-pulse {
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Hides the intro overlay for returning visitors (class set by the inline script in layout.tsx). */

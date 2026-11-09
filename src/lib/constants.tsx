@@ -78,7 +78,7 @@ export const projectsData = [
       "Express",
       "Node.js",
     ],
-    liveLink: "https://modernsensei.com/",
+    liveLink: "https://lms-client-jry7.onrender.com",
     githubLink: "https://github.com/AdamMechaeil/lms",
   },
   {
@@ -123,7 +123,7 @@ export const arsenalItems = [
 
 export const Socials = [
   {
-    name: "Github",
+    name: "GitHub",
     link: socialUrls.github,
     icon: (
       <IconBrandGithub

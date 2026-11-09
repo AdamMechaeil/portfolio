@@ -1,13 +1,19 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const BackgroundBeams = ({ className }: { className?: string }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: -1000, y: -1000 });
+  // Only animate and track the mouse while this is near the screen: endless
+  // offscreen animation wastes CPU and battery.
+  const inView = useInView(containerRef, { margin: "200px" });
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (!inView) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -20,7 +26,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
     // Bind event to window to track even if mouse is slightly off
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [inView]);
 
   // Predictable criss-crossing paths for the laser beams
   const paths = [
@@ -59,7 +65,9 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
         transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
       />
 
-      {/* The animated shooting laser beams (Brighter) */}
+      {/* The animated shooting laser beams (Brighter). Not drawn offscreen or
+          for visitors who prefer reduced motion. */}
+      {inView && !reduceMotion && (
       <svg
         className="absolute inset-0 h-full w-full pointer-events-none opacity-40"
         preserveAspectRatio="none"
@@ -99,6 +107,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
           />
         ))}
       </svg>
+      )}
     </div>
   );
 };

@@ -114,7 +114,7 @@ export const ProjectsSection = () => {
               <CarouselNext className="absolute -right-12 lg:-right-20 bg-black dark:bg-white text-white dark:text-black hover:bg-blue-500 hover:text-black dark:hover:bg-blue-500 border-none shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all" />
             </div>
           </Carousel>
-          <div className="block md:hidden text-center mt-6 text-blue-400 font-mono text-xs uppercase tracking-widest animate-pulse">
+          <div className="block md:hidden text-center mt-6 text-blue-400 font-mono text-xs uppercase tracking-widest animate-soft-pulse">
             {"<"} Swipe for more {">"}
           </div>
         </div>
@@ -211,7 +211,7 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex-1 flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
+                className="flex-1 flex min-h-11 items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
               >
                 <IconExternalLink size={16} /> Live
               </a>
@@ -222,7 +222,7 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
+                className="flex-1 flex min-h-11 items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
               >
                 <IconBrandGithub size={16} /> Source
               </a>
