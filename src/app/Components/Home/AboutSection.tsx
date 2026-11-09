@@ -54,7 +54,7 @@ export const AboutSection = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-black backdrop-blur-md border border-black/10 dark:border-white/10 rounded-xl p-6 md:p-10 shadow-2xl">
+        <div>
           <div className="space-y-5 text-base md:text-lg leading-relaxed text-black/80 dark:text-white/80">
             <p>
               <span className="italic">Good day, traveller.</span> I am Adam, a
