@@ -131,11 +131,9 @@
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-white/80 dark:bg-black/10 shadow-sm dark:shadow-none;
-  }
-  .glass-heavy {
-    @apply bg-white/100 dark:bg-black/100 shadow-md dark:shadow-none;
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.25) transparent;
   }
   .animate-scroll {
     animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;

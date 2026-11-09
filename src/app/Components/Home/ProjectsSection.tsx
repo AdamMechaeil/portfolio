@@ -73,22 +73,26 @@ export const ProjectsSection = () => {
                             ))}
                           </div>
                           <div className="flex gap-4 mt-4">
-                            <a
-                              href={project.liveLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
-                            >
-                              <IconExternalLink size={16} /> Live Demo
-                            </a>
-                            <a
-                              href={project.githubLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
-                            >
-                              <IconBrandGithub size={18} /> Source Code
-                            </a>
+                            {project.liveLink && (
+                              <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
+                              >
+                                <IconExternalLink size={16} /> Live Demo
+                              </a>
+                            )}
+                            {project.githubLink && (
+                              <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors"
+                              >
+                                <IconBrandGithub size={18} /> Source Code
+                              </a>
+                            )}
                           </div>
                         </div>
                       </DirectionAwareHover>
@@ -140,7 +144,7 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <motion.div
-        className="w-full h-full relative preserve-3d"
+        className="w-full h-full relative"
         style={{ transformStyle: "preserve-3d" }}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{
@@ -161,9 +165,9 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             className={`object-cover w-full h-full opacity-90 ${project.mobileAlignment || "object-left-top"}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <p className="text-2xl font-bold text-white mb-2">
               {project.title}
-            </h3>
+            </p>
             <div className="flex items-center gap-2 text-blue-400 text-sm font-mono uppercase">
               <IconHandClick size={16} className="animate-pulse" />
               <span>Tap for details</span>
@@ -179,9 +183,9 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             transform: "rotateY(180deg)",
           }}
         >
-          <h3 className="font-bold text-2xl text-white mb-4">
+          <p className="font-bold text-2xl text-white mb-4">
             {project.title}
-          </h3>
+          </p>
           <p className="text-neutral-300 text-sm flex-1 overflow-y-auto pr-2 custom-scrollbar">
             {project.description}
           </p>
@@ -196,24 +200,28 @@ const MobileFlipCard = ({ project }: { project: (typeof projectsData)[0] }) => {
             ))}
           </div>
           <div className="flex gap-4 pt-4 border-t border-white/10">
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
-            >
-              <IconExternalLink size={16} /> Live
-            </a>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
-            >
-              <IconBrandGithub size={16} /> Source
-            </a>
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex-1 flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 rounded-lg text-xs transition-colors"
+              >
+                <IconExternalLink size={16} /> Live
+              </a>
+            )}
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2 rounded-lg text-xs transition-colors"
+              >
+                <IconBrandGithub size={16} /> Source
+              </a>
+            )}
           </div>
         </div>
       </motion.div>

@@ -66,7 +66,7 @@ export const Navigation = () => {
           <img
             src="/logo.png"
             alt="AM"
-            className="w-12 h-12 object-cover rounded-corners invert drop-shadow-md"
+            className="w-12 h-12 object-cover invert drop-shadow-md"
           />
         </motion.div>
         <div
@@ -89,7 +89,7 @@ export const Navigation = () => {
 
             <a
               href="/resume.pdf"
-              download
+              download="Adam-Mechaeil-Resume.pdf"
               className="p-2 rounded-full hover:bg-black/10 transition-colors drop-shadow-md text-white"
               title="Download Resume"
             >

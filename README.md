@@ -2,16 +2,16 @@
 
 Welcome to my personal portfolio repository. This project is a highly-interactive, full-stack web application built to showcase my skills, projects, and professional experience.
 
-![Portfolio Preview](/public/logo.png) <!-- Update this path if you add a banner image later -->
+![Adam Mechaeil logo](/public/logo.png)
 
 ## 🚀 Tech Stack
 
-This portfolio is built using bleeding-edge web technologies to ensure maximum performance, seamless animations, and a premium user experience:
+This portfolio is built with the following technologies:
 
 - **Framework**: [Next.js 16.2.9](https://nextjs.org/) (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Aceternity UI,shadcn/ui](https://ui.aceternity.com/,https://ui.shadcn.com/)
+- **UI Components**: [Aceternity UI](https://ui.aceternity.com/) and [shadcn/ui](https://ui.shadcn.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Database (Contact Form)**: PostgreSQL + [Prisma ORM](https://www.prisma.io/)
 - **Deployment**: [Vercel](https://vercel.com)
@@ -19,9 +19,9 @@ This portfolio is built using bleeding-edge web technologies to ensure maximum p
 ## ✨ Key Features
 
 - **Glassmorphism & Dark Mode**: A sleek, modern aesthetic utilizing heavy background blurs, glowing accents, and dynamic gradients.
-- **Advanced Micro-Interactions**: Complex animations powered by Framer Motion, including magnetic buttons, tracing beams, and mouse-tracking spotlights.
+- **Advanced Micro-Interactions**: Complex animations powered by Framer Motion, including tracing beams and a mouse-tracking background.
 - **Serverless Contact Flow**: A fully functional, stateful contact modal that securely saves messages directly to a PostgreSQL database via Server Actions.
-- **Performance Optimized**: Lighthouse scores optimized with strict TypeScript typing, responsive images, and server-side rendering.
+- **Typed Throughout**: Strict TypeScript across the whole project.
 
 ## 🛠️ Local Development
 
@@ -41,7 +41,7 @@ To run this project locally on your machine:
    ```
 
 3. **Set up environment variables**
-   Create a `.env` file in the root directory and add your PostgreSQL database URL:
+   Copy `.env.example` to `.env` in the root directory and set your PostgreSQL database URL:
 
    ```env
    DATABASE_URL="postgres://user:password@host:5432/dbname"

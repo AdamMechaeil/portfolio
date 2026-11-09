@@ -12,7 +12,7 @@ export const experienceData = [
   {
     role: "Full Stack Developer and Trainer",
     company: "Techstack",
-    location: "Delhi,India",
+    location: "Delhi, India",
     date: "December 2023 - January 2026",
     description:
       "Architected a secure, production-grade LMS for 200+ students, featuring JWT-based RBAC and an atomic ID generation system for data integrity. Additionally, automated Google Meet scheduling and attendance tracking, saving the operations team over 10 hours per week.",
@@ -23,15 +23,15 @@ export const experienceData = [
       "AWS",
       "System Architecture",
       "Java Core",
-      "MYSQL",
-      "MongoDb",
+      "MySQL",
+      "MongoDB",
       "Docker",
     ],
   },
   {
-    role: "Javascript Developer",
+    role: "JavaScript Developer",
     company: "Proses Web Technologies",
-    location: "Vadodra Gujrat",
+    location: "Vadodara, Gujarat",
     date: "November 2022 - August 2023",
     description:
       "Optimized legacy React and Express.js applications, boosting Lighthouse performance scores to 92 and reducing load times to under two seconds. Modernized the platform with a responsive Tailwind CSS UI and resolved critical payment gateway bugs to ensure transaction reliability.",
@@ -40,7 +40,7 @@ export const experienceData = [
       "TypeScript",
       "Tailwind CSS",
       "MySQL",
-      "MongoDb",
+      "MongoDB",
       "Node.js",
       "AWS",
       "Docker",
@@ -63,19 +63,19 @@ export const projectsData = [
   {
     title: "Modern Sensei",
     description:
-      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches,admissions, students, batches to handling CRM easily. ",
+      "Multi-tenant Learning Management System which intends to cater institutes of every scale and allow them to handle almost everything required by an Institute, from managing multiple branches, admissions, students, batches to handling CRM easily.",
     image: "/modernsensei.png",
     mobileAlignment: "object-left-top",
     techStack: [
       "React",
       "Next.js",
       "Tailwind CSS",
-      "MongoDb",
+      "MongoDB",
       "Express",
-      "NodeJs",
+      "Node.js",
     ],
     liveLink: "https://modernsensei.com/",
-    githubLink: "",
+    githubLink: "https://github.com/AdamMechaeil/lms",
   },
   {
     title: "Tharoorify",
@@ -91,7 +91,7 @@ export const projectsData = [
       "Chrome API",
       "Tailwind CSS",
     ],
-    liveLink: "https://github.com/AdamMechaeil/Tharoorfiy",
+    liveLink: "",
     githubLink: "https://github.com/AdamMechaeil/Tharoorfiy",
   },
 ];
